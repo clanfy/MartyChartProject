@@ -20,19 +20,32 @@ public class MedsList extends AppCompatActivity {
     TextView mInfoText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meds_list);
 
         mListView = (ListView) findViewById(R.id.medslist);
         mInfoText = (TextView) findViewById(R.id.txtresulttext);
 
-        try{
+        try {
             List<HashMap<String, String>> data = mcontroller.getAllMeds();
-            if (data.size() != 0){
+            if (data.size() != 0) {
                 SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data, R.layout.rows, new String[]{"id", "medicine", "quantity", "time"}, new int[]{
                         R.id.etmedid, R.id.etmed, R.id.etquantity, R.id.etdate});
+
+                mListView.setAdapter(adapter);
+                String length = String.valueOf(data.size());
+                mInfoText.setText(length + " places");
+            } else {
+                mInfoText.setText("No medications added");
             }
+
+        } catch (Exception exception) {
+            mInfoText.setText(exception.getMessage().toString());
+        }
+    }
+
+    
 
 
 
