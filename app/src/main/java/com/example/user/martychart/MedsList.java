@@ -44,17 +44,18 @@ public class MedsList extends AppCompatActivity {
             mInfoText.setText(exception.getMessage().toString());
         }
     }
-
-    
-
-
-
-        }
-
-    }
+}
 
 
 
-    }
+
+
+
+
+
+
+
+
+
 
 
