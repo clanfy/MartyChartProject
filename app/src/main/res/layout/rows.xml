@@ -6,17 +6,15 @@
 
     <LinearLayout
         android:id="@+id/lvh"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:scrollbars="horizontal"
-        android:weightSum="4" >
+        android:layout_width="fill_parent">
 
         <TextView
             android:id="@+id/etmedid"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.6"
             android:gravity="center"
             android:text="1"
             android:background="#c9b0ff"
@@ -25,7 +23,7 @@
 
         <TextView
             android:id="@+id/etmed"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1.7"
             android:gravity="center"
@@ -33,11 +31,19 @@
             android:textColor="#000"
             android:textSize="20sp" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lvh2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_width="fill_parent">
+
         <TextView
             android:id="@+id/etquantity"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.7"
             android:gravity="center"
             android:background="#d3f5ff"
             android:textColor="#000"
@@ -45,9 +51,8 @@
 
         <TextView
             android:id="@+id/etdate"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.7"
             android:gravity="center"
             android:background="#d3ffdd"
             android:textColor="#000"
@@ -57,4 +62,4 @@
     </LinearLayout>
 
 
-    </LinearLayout>
+</LinearLayout>
