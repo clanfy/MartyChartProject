@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -98,8 +100,39 @@ public class MCApp extends AppCompatActivity {
             }
         });
 
+        mDelete.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                try {
+                    if (mMedId.getText().toString().trim().equals("")) {
+                        mResultText.setText("Please insert ID to delete");
+                    } else {
+                        mController = new DBController(getApplicationContext());
+                        SQLiteDatabase db = mController.getWritableDatabase();
 
+                        db.delete("medications", "id=" + mMedId.getText().toString(), null);
 
+                        Toast.makeText(MCApp.this, "Deleted successfully", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception exception) {
+                    mResultText.setText(exception.getMessage().toString());
+                }
+            }
+        });
     }
+
+    //TODO: onCreateOptionsMenu
+//    @Override
+//    public boolean onCreateOptionsMenu (Menu menu){
+//        return true;
+//    }
+
+    //TODO: onOptionsItemsSelected
+
+//    @Override
+//    public boolean onOptionsItemsSelected(MenuItem item){
+//        return true;
+//    }
+
 
 }
