@@ -29,7 +29,7 @@ public class MedsList extends AppCompatActivity {
 
         try{
             List<HashMap<String, String>> data = mcontroller.getAllMeds();
-            if (data.size()) != 0){
+            if (data.size() != 0){
                 SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data, R.layout.rows, new String[]{"id", "medicine", "quantity", "time"}, new int[]{
                         R.id.etmedid, R.id.etmed, R.id.etquantity, R.id.etdate});
             }
