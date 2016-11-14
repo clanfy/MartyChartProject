@@ -1,5 +1,6 @@
 package com.example.user.martychart;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
@@ -7,4 +8,18 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DBController extends SQLiteOpenHelper {
+
+    private static final String tablename = "medication"; //table name
+    private static final String medication = "medication"; //column name
+    private static final String id = "ID"; //auto generated ID column
+    private static final String databasename = "medicationinfo"; //database name
+    private static final int versioncode = 1; //version code of the database
+    //will also need quantity and time taken
+
+    public DBController(Context context) {
+        super(context, databasename, null, versioncode);
+    }
+
+    
+
 }
