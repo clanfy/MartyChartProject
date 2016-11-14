@@ -20,7 +20,7 @@ public class DBController extends SQLiteOpenHelper {
     private static final String quantity = "quantity"; //column name
     private static final String date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
-    private static final int versioncode = 4; //version code of the database
+    private static final int versioncode = 6; //version code of the database
 
 
     public DBController(Context context) {

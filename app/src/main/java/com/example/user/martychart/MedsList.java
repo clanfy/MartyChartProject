@@ -17,7 +17,7 @@ import java.util.List;
 
 public class MedsList extends AppCompatActivity {
 
-    DBController mcontroller = new DBController(this);
+    DBController mController = new DBController(this);
     ListView mListView;
     TextView mInfoText;
 
@@ -26,11 +26,11 @@ public class MedsList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meds_list);
 
-        mListView = (ListView) findViewById(R.id.medslist);
+        mListView = (ListView) findViewById(R.id.meds_list);
         mInfoText = (TextView) findViewById(R.id.txtresulttext);
 
         try {
-            List<HashMap<String, String>> data = mcontroller.getAllMeds();
+            List<HashMap<String, String>> data = mController.getAllMeds();
             if (data.size() != 0) {
                 SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
                         R.layout.rows, new String[]{"id", "medicine", "quantity", "time"},
