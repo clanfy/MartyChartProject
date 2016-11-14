@@ -16,11 +16,11 @@ public class DBController extends SQLiteOpenHelper {
 
     private static final String tablename = "medications"; //table name
     private static final String id = "ID"; //auto generated ID column
-    private static final String medication = "medication"; //column name
+    private static final String medicine = "medicine"; //column name
     private static final String quantity = "quantity"; //column name
-    private static final String time = "time"; //column name
+    private static final String date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
-    private static final int versioncode = 1; //version code of the database
+    private static final int versioncode = 4; //version code of the database
 
 
     public DBController(Context context) {
@@ -31,8 +31,8 @@ public class DBController extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database){
         String query;
         query = "CREATE TABLE IF NOT EXISTS " + tablename +
-                "(" + id + "integer primary key, " + medication +
-                " text," + quantity + " text," + time + " text)";
+                "(" + id + "integer primary key, " + medicine +
+                " text," + quantity + " text," + date + " text)";
         database.execSQL(query);
     }
 
