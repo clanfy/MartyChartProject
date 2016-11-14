@@ -54,8 +54,8 @@ public class DBController extends SQLiteOpenHelper {
             do {
 
                 HashMap<String, String> map = new HashMap<String, String>();
-                map.put("id", cursor.getString(0));
-                map.put("medication", cursor.getString(1));
+                map.put("ID", cursor.getString(0));
+                map.put("medicine", cursor.getString(1));
                 map.put("quantity", cursor.getString(2));
                 map.put("time", cursor.getString(3));
 
