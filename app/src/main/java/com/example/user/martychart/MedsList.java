@@ -2,6 +2,8 @@ package com.example.user.martychart;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -44,6 +46,20 @@ public class MedsList extends AppCompatActivity {
             mInfoText.setText(exception.getMessage().toString());
         }
     }
+
+
+    //TODO: onCreateOptionsMenu
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        return true;
+//    }
+
+    //TODO: OnOptionsItemSelected
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item){
+//        return true;
+//    }
+
 }
 
 
