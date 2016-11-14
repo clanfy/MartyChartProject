@@ -1,6 +1,7 @@
 package com.example.user.martychart;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
@@ -20,6 +21,15 @@ public class DBController extends SQLiteOpenHelper {
         super(context, databasename, null, versioncode);
     }
 
+    @Override
+    public void OnCreate(SQLiteDatabase database){
+        String query;
+        query = "CREATE TABLE IF NOT EXISTS " + tablename + "(" + id + "integer primary key, " + medication + " text)";
+        database.execSQL(query);
+    }
+
     
+
+
 
 }
