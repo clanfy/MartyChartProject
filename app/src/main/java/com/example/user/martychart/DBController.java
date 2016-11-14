@@ -28,7 +28,7 @@ public class DBController extends SQLiteOpenHelper {
         database.execSQL(query);
     }
 
-    
+
 
 
 
