@@ -80,7 +80,7 @@ public class MCApp extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 try {
-                    if ((mMedicine.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals(""){
+                    if ((mMedicine.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals("")){
                         mResultText.setText("Please insert values to update");
                     } else{
                         mController = new DBController(getApplicationContext());
