@@ -20,7 +20,7 @@ public class DBController extends SQLiteOpenHelper {
     private static final String quantity = "quantity"; //column name
     private static final String date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
-    private static final int versioncode = 6; //version code of the database
+    private static final int versioncode = 7; //version code of the database
 
 
     public DBController(Context context) {
@@ -31,8 +31,8 @@ public class DBController extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database){
         String query;
         query = "CREATE TABLE IF NOT EXISTS " + tablename +
-                "(" + id + "integer primary key, " + medicine +
-                " text," + quantity + " text," + date + " text)";
+                "(" + id + " integer primary key, " + medicine +
+                " text, " + quantity + " text, " + date + " text)";
         database.execSQL(query);
     }
 
@@ -54,7 +54,7 @@ public class DBController extends SQLiteOpenHelper {
             do {
 
                 HashMap<String, String> map = new HashMap<String, String>();
-                map.put("ID", cursor.getString(0));
+                map.put("id", cursor.getString(0));
                 map.put("medicine", cursor.getString(1));
                 map.put("quantity", cursor.getString(2));
                 map.put("time", cursor.getString(3));
