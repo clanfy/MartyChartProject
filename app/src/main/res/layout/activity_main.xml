@@ -3,7 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="7"
     android:background="#FFFFFF">
 
     <ImageButton
@@ -11,7 +10,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:src="@drawable/red_pill"
+        android:src="@drawable/donzepil"
         />
 
 
