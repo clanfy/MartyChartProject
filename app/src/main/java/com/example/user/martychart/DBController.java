@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 public class DBController extends SQLiteOpenHelper {
 
-    private static final String tablename = "medication"; //table name
+    private static final String tablename = "medications"; //table name
     private static final String id = "ID"; //auto generated ID column
     private static final String medication = "medication"; //column name
     private static final String quantity = "quantity"; //column name
