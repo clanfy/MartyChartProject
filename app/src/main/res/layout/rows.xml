@@ -31,14 +31,6 @@
             android:textColor="#000"
             android:textSize="20sp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lvh2"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:scrollbars="horizontal"
-            android:layout_width="fill_parent">
 
         <TextView
             android:id="@+id/etquantity"
@@ -59,7 +51,7 @@
             android:textSize="20sp" />
 
 
-    </LinearLayout>
 
+</LinearLayout>
 
 </LinearLayout>

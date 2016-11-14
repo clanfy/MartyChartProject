@@ -48,6 +48,7 @@ public class MCApp extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MCApp.this, MedsList.class);
+                Log.d("View meds list:", "list clicked");
                 startActivity(intent);
             }
         });

@@ -38,7 +38,7 @@ public class MedsList extends AppCompatActivity {
 
                 mListView.setAdapter(adapter);
                 String length = String.valueOf(data.size());
-                mInfoText.setText(length + " places");
+                mInfoText.setText(length + " Medications taken");
             } else {
                 mInfoText.setText("No medications added");
             }
