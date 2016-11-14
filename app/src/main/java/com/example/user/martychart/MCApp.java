@@ -74,6 +74,31 @@ public class MCApp extends AppCompatActivity {
 
         });
 
+        mUpdate.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                try {
+                    if ((mMedicine.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals(""){
+                        mResultText.setText("Please insert values to update");
+                    } else {
+                        mController = new DBController(getApplicationContext());
+                        SQLiteDatabase db = mController.getWritableDatabase();
+                        ContentValues contentValues = new ContentValues();
+                        contentValues.put("medicine", mMedicine.getText().toString());
+                        contentValues.put("quantity", mQuantity.getText().toString());
+                        contentValues.put("date", mDate.getText().toString());
+
+                        db.update("medications", contentValues, "id=" + mMedId.getText().toString(), null);
+
+
+                    }
+                }
+            }
+
+        });
+
+
+
     }
 
 }
