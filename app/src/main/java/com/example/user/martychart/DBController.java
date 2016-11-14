@@ -11,8 +11,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBController extends SQLiteOpenHelper {
 
     private static final String tablename = "medication"; //table name
-    private static final String medication = "medication"; //column name
     private static final String id = "ID"; //auto generated ID column
+    private static final String medication = "medication"; //column name
+    private static final String quantity = "quantity"; //column name
+    private static final String datetime = "date time"; //column name
     private static final String databasename = "medicationinfo"; //database name
     private static final int versioncode = 1; //version code of the database
     //will also need quantity and time taken
@@ -24,7 +26,9 @@ public class DBController extends SQLiteOpenHelper {
     @Override
     public void OnCreate(SQLiteDatabase database){
         String query;
-        query = "CREATE TABLE IF NOT EXISTS " + tablename + "(" + id + "integer primary key, " + medication + " text)";
+        query = "CREATE TABLE IF NOT EXISTS " + tablename +
+                "(" + id + "integer primary key, " + medication +
+                " text," + quantity + " text," + datetime + " text)";
         database.execSQL(query);
     }
 
