@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 /**
@@ -80,7 +80,7 @@ public class MCApp extends AppCompatActivity {
                 try {
                     if ((mMedicine.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals(""){
                         mResultText.setText("Please insert values to update");
-                    } else {
+                    } else{
                         mController = new DBController(getApplicationContext());
                         SQLiteDatabase db = mController.getWritableDatabase();
                         ContentValues contentValues = new ContentValues();
@@ -90,11 +90,12 @@ public class MCApp extends AppCompatActivity {
 
                         db.update("medications", contentValues, "id=" + mMedId.getText().toString(), null);
 
-
+                        Toast.makeText(MCApp.this, "Medication input updated successfully", Toast.LENGTH_SHORT).show();
                     }
+                } catch (Exception exception) {
+                    mResultText.setText(exception.getMessage().toString());
                 }
             }
-
         });
 
 
