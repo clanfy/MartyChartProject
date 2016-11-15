@@ -1,5 +1,6 @@
 package com.example.user.martychart;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,7 +50,15 @@ public class DBController extends SQLiteOpenHelper {
 
     //add new medication
     public void addMedication (Medication medication){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(name, medication.getName());
+        contentValues.put(quantity, medication.getQuantity());
+        contentValues.put(date, medication.getDate());
 
+        //inserting row
+        db.insert(tablename, null, contentValues);
+        db.close();
     }
 
     // get single medication
@@ -74,7 +83,7 @@ public class DBController extends SQLiteOpenHelper {
 
     //delete single medication
     public void deleteMedication(Medication medication){
-        
+
     }
 
 
