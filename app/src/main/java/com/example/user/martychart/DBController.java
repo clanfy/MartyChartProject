@@ -79,8 +79,8 @@ public class DBController extends SQLiteOpenHelper {
     }
 
     //get all medication
-    public List<Medication> getAllMeds(){
-        List<Medication> medicationList = new ArrayList<Medication>();
+    public ArrayList<Medication> getAllMeds(){
+        ArrayList<Medication> medicationList = new ArrayList<Medication>();
 
         String query = "SELECT * FROM " + tablename;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -94,6 +94,7 @@ public class DBController extends SQLiteOpenHelper {
                 medication.setQuantity(Integer.parseInt(cursor.getString(2)));
                 medication.setDate(Integer.parseInt(cursor.getString(3)));
                 medicationList.add(medication);
+
             } while (cursor.moveToNext());
         }
         return medicationList;
