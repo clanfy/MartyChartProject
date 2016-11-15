@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -29,26 +30,11 @@ public class MedsList extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.meds_list);
         mInfoText = (TextView) findViewById(R.id.txtresulttext);
 
-        try {
-            Medication data = (Medication) mController.getAllMeds();//get all meds method
-            if (data.lstView.getAdapter.getCount() != 0) {
-                SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
-                        R.layout.rows, new String[]{"id", "name", "quantity", "time"},
-                        new int[]{R.id.etmedid, R.id.etname, R.id.etquantity, R.id.etdate});
+        ArrayAdapter<Medication> adapter = new ArrayAdapter<Medication>(this, android.R.layout.simple_list_item_1, mController.getAllMeds());
 
-                mListView.setAdapter(adapter);
-                String length = String.valueOf(data.size());
-                mInfoText.setText(length + " Medications taken");
-            }
-            else {
-                mInfoText.setText("No medications added");
-            }
-
-        } catch (Exception exception) {
-            mInfoText.setText(exception.getMessage().toString());
-        }
+        mListView.setAdapter(adapter);
     }
-    }
+}
 
 
     //TODO: onCreateOptionsMenu
