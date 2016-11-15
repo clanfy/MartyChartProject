@@ -37,6 +37,11 @@ public class Medication {
         return this.mId;
     }
 
+    //getting id as string
+    public String getIdString(){
+        return Integer.toString(this.mId);
+    }
+
     //setting id
     public void setId(int id){
         this.mId = id;

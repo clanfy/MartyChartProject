@@ -28,4 +28,9 @@ public class MedicationTest {
         assertEquals(1, medication.getId());
     }
 
+    @Test
+    public void testCanGetIdAsString(){
+        assertEquals("1", medication.getIdString());
+    }
+
 }
