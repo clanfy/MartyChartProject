@@ -33,8 +33,8 @@ public class MedsList extends AppCompatActivity {
             List<HashMap<String, String>> data = mController.getAllMeds();//get all meds method
             if (data.size() != 0) {
                 SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
-                        R.layout.rows, new String[]{"id", "medicine", "quantity", "time"},
-                        new int[]{R.id.etmedid, R.id.etmed, R.id.etquantity, R.id.etdate});
+                        R.layout.rows, new String[]{"id", "name", "quantity", "time"},
+                        new int[]{R.id.etmedid, R.id.etname, R.id.etquantity, R.id.etdate});
 
                 mListView.setAdapter(adapter);
                 String length = String.valueOf(data.size());

@@ -28,7 +28,7 @@
         android:focusableInTouchMode="false"/>
 
     <EditText
-        android:id="@+id/etmed"
+        android:id="@+id/etname"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

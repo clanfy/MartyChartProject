@@ -16,7 +16,7 @@ public class DBController extends SQLiteOpenHelper {
 
     private static final String tablename = "medications"; //table name
     private static final String id = "ID"; //auto generated ID column
-    private static final String medicine = "medicine"; //column name
+    private static final String name = "name"; //column name
     private static final String quantity = "quantity"; //column name
     private static final String date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
@@ -31,7 +31,7 @@ public class DBController extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database){
         String query;
         query = "CREATE TABLE IF NOT EXISTS " + tablename +
-                "(" + id + " integer primary key, " + medicine +
+                "(" + id + " integer primary key, " + name +
                 " text, " + quantity + " integer, " + date + " integer)";
         database.execSQL(query);
     }
@@ -55,7 +55,7 @@ public class DBController extends SQLiteOpenHelper {
 
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("id", cursor.getString(0));
-                map.put("medicine", cursor.getString(1));
+                map.put("name", cursor.getString(1));
                 map.put("quantity", cursor.getString(2));
                 map.put("time", cursor.getString(3));
 

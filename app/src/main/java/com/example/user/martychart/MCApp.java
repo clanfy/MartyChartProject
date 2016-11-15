@@ -23,7 +23,7 @@ public class MCApp extends AppCompatActivity {
 
     DBController mController = new DBController(this);
     Button mAdd, mView, mUpdate, mDelete;
-    EditText mMedId, mMedicine, mQuantity, mDate;
+    EditText mMedId, mName, mQuantity, mDate;
     TextView mResultText;
 
     @Override
@@ -33,7 +33,7 @@ public class MCApp extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mMedId = (EditText) findViewById(R.id.etmedid);
-        mMedicine = (EditText) findViewById(R.id.etmed);
+        mName = (EditText) findViewById(R.id.etname);
         mQuantity = (EditText) findViewById(R.id.etquantity);
         mDate = (EditText) findViewById(R.id.etdate);
 
@@ -57,13 +57,13 @@ public class MCApp extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 try {
-                    if (mMedicine.getText().toString().trim().equals("") || mQuantity.getText().toString().trim().equals("")){
+                    if (mName.getText().toString().trim().equals("") || mQuantity.getText().toString().trim().equals("")){
                         mResultText.setText("Please enter medication");
                     } else {
                         mController = new DBController(getApplicationContext());
                         SQLiteDatabase db = mController.getWritableDatabase();
                         ContentValues contentValues = new ContentValues();
-                        contentValues.put("medicine", mMedicine.getText().toString());
+                        contentValues.put("name", mName.getText().toString());
                         contentValues.put("quantity", mQuantity.getText().toString());
                         contentValues.put("date", mDate.getText().toString());
                         db.insert("medications", null, contentValues);
@@ -81,13 +81,13 @@ public class MCApp extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 try {
-                    if ((mMedicine.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals("")){
+                    if ((mName.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals("")){
                         mResultText.setText("Please insert values to update");
                     } else{
                         mController = new DBController(getApplicationContext());
                         SQLiteDatabase db = mController.getWritableDatabase();
                         ContentValues contentValues = new ContentValues();
-                        contentValues.put("medicine", mMedicine.getText().toString());
+                        contentValues.put("name", mName.getText().toString());
                         contentValues.put("quantity", mQuantity.getText().toString());
                         contentValues.put("date", mDate.getText().toString());
 
