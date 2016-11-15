@@ -78,27 +78,59 @@ public class DBController extends SQLiteOpenHelper {
 
     }
 
-    //get all medication
-    public ArrayList<Medication> getAllMeds(){
-        ArrayList<Medication> medicationList = new ArrayList<Medication>();
+    //GET ALL MEDICATION
 
-        String query = "SELECT * FROM " + tablename;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-
-        if (cursor.moveToFirst()){
+    public ArrayList<HashMap<String, String>> getAllMeds() {
+        ArrayList<HashMap<String, String>> wordList;
+        wordList = new ArrayList<HashMap<String, String>>();
+        Medication medication = new Medication();
+        String selectQuery = "SELECT  * FROM " + tablename;
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
             do {
-                Medication medication = new Medication();
-                medication.setId(Integer.parseInt(cursor.getString(0)));
-                medication.setName(cursor.getString(1));
-                medication.setQuantity(Integer.parseInt(cursor.getString(2)));
-                medication.setDate(Integer.parseInt(cursor.getString(3)));
-                medicationList.add(medication);
 
+                HashMap<String, String> map = new HashMap<String, String>();
+                map.put(medication.getIdString(), cursor.getString(0));
+                map.put(medication.getName(), cursor.getString(1));
+                map.put(medication.getQuantityString(), cursor.getString(2));
+                map.put(medication.getDateString(), cursor.getString(3));
+
+                wordList.add(map);
             } while (cursor.moveToNext());
         }
-        return medicationList;
+
+        // return contact list
+        return wordList;
     }
+
+
+
+
+
+
+
+
+//    public ArrayList<Medication> getAllMeds(){
+//        ArrayList<Medication> medicationList = new ArrayList<Medication>();
+//
+//        String query = "SELECT * FROM " + tablename;
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor cursor = db.rawQuery(query, null);
+//
+//        if (cursor.moveToFirst()){
+//            do {
+//                Medication medication = new Medication();
+//                medication.setId(Integer.parseInt(cursor.getString(0)));
+//                medication.setName(cursor.getString(1));
+//                medication.setQuantity(Integer.parseInt(cursor.getString(2)));
+//                medication.setDate(Integer.parseInt(cursor.getString(3)));
+//                medicationList.add(medication);
+//
+//            } while (cursor.moveToNext());
+//        }
+//        return medicationList;
+//    }
 
 //    //get medication count
     public int getMedicationCount(){
