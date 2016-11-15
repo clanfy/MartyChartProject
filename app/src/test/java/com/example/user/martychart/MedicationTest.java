@@ -33,4 +33,9 @@ public class MedicationTest {
         assertEquals("1", medication.getIdString());
     }
 
+    @Test
+    public void testMedicationHasQuantity(){
+        assertEquals(2, medication.getQuantity());
+    }
+
 }
