@@ -53,10 +53,17 @@ public class Medication {
     }
 
     //getting quantity
+    public int getQuantity(){
+        return this.mQuantity;
+    }
 
     //setting quantity
+    public void setQuantity(int quantity){
+        this.mQuantity = quantity;
+    }
 
     //getting date
+    
 
     //setting date
 
