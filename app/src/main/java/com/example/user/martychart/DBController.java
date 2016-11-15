@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by user on 14/11/2016.
@@ -44,6 +45,40 @@ public class DBController extends SQLiteOpenHelper {
         onCreate(database);
     }
 
+    //all CRUD operations
+
+    //add new medication
+    public void addMedication (Medication medication){
+
+    }
+
+    // get single medication
+    public Medication getMedication(int id){
+
+    }
+
+    //get all medication
+    public List<Medication> getAllMedication(){
+
+    }
+
+    //get medication count
+    public int getMedicationCount(){
+
+    }
+
+    //update single medication
+    public int updateMedication(Medication medication){
+
+    }
+
+    //delete single medication
+    public void deleteMedication(Medication medication){
+        
+    }
+
+
+
     public ArrayList<HashMap<String, String>> getAllMeds() {
         ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
@@ -55,7 +90,7 @@ public class DBController extends SQLiteOpenHelper {
 
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("id", cursor.getString(0));
-                map.put("name", cursor.getString(1));
+                map.put("name  ", cursor.getString(1));
                 map.put("quantity", cursor.getString(2));
                 map.put("time", cursor.getString(3));
 
