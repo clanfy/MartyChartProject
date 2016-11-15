@@ -43,8 +43,14 @@ public class Medication {
     }
 
     //getting name
+    public String getName(){
+        return this.mName;
+    }
 
     //setting name
+    public void setName(String name){
+        this.mName = name;
+    }
 
     //getting quantity
 
