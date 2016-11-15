@@ -100,10 +100,15 @@ public class DBController extends SQLiteOpenHelper {
     }
 
 //    //get medication count
-//    public int getMedicationCount(){
-//
-//    }
-//
+    public int getMedicationCount(){
+        String countQuery = "SELECT * FROM " + tablename;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+
+        return cursor.getCount();
+    }
+
 //    //update single medication
 //    public int updateMedication(Medication medication){
 //

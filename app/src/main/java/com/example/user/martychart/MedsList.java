@@ -30,8 +30,8 @@ public class MedsList extends AppCompatActivity {
         mInfoText = (TextView) findViewById(R.id.txtresulttext);
 
         try {
-            List<HashMap<String, String>> data = mController.getAllMeds();//get all meds method
-            if (data.size() != 0) {
+            Medication data = (Medication) mController.getAllMeds();//get all meds method
+            if (data.lstView.getAdapter.getCount() != 0) {
                 SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
                         R.layout.rows, new String[]{"id", "name", "quantity", "time"},
                         new int[]{R.id.etmedid, R.id.etname, R.id.etquantity, R.id.etdate});
@@ -39,13 +39,15 @@ public class MedsList extends AppCompatActivity {
                 mListView.setAdapter(adapter);
                 String length = String.valueOf(data.size());
                 mInfoText.setText(length + " Medications taken");
-            } else {
+            }
+            else {
                 mInfoText.setText("No medications added");
             }
 
         } catch (Exception exception) {
             mInfoText.setText(exception.getMessage().toString());
         }
+    }
     }
 
 
@@ -61,7 +63,7 @@ public class MedsList extends AppCompatActivity {
 //        return true;
 //    }
 
-}
+
 
 
 
