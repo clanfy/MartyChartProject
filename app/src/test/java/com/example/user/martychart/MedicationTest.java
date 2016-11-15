@@ -23,4 +23,9 @@ public class MedicationTest {
         assertEquals("Viagra", medication.getName());
     }
 
+    @Test
+    public void testMedicationHasId(){
+        assertEquals(1, medication.getId());
+    }
+
 }
