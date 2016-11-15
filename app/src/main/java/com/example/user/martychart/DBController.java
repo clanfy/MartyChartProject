@@ -17,10 +17,10 @@ import java.util.List;
 public class DBController extends SQLiteOpenHelper {
 
     private static final String tablename = "medications"; //table name
-    private static final String id = "ID"; //auto generated ID column
-    private static final String name = "name"; //column name
-    private static final String quantity = "quantity"; //column name
-    private static final String date = "date"; //column name
+    private static final String key_id = "ID"; //auto generated ID column
+    private static final String key_name = "name"; //column name
+    private static final String key_quantity = "quantity"; //column name
+    private static final String key_date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
     private static final int versioncode = 7; //version code of the database
 
@@ -33,8 +33,8 @@ public class DBController extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database){
         String query;
         query = "CREATE TABLE IF NOT EXISTS " + tablename +
-                "(" + id + " integer primary key, " + name +
-                " text, " + quantity + " integer, " + date + " integer)";
+                "(" + key_id + " integer primary key, " + key_name +
+                " text, " + key_quantity + " integer, " + key_date + " integer)";
         database.execSQL(query);
     }
 
@@ -52,9 +52,9 @@ public class DBController extends SQLiteOpenHelper {
     public void addMedication (Medication medication){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(name, medication.getName());
-        contentValues.put(quantity, medication.getQuantity());
-        contentValues.put(date, medication.getDate());
+        contentValues.put(key_name, medication.getName());
+        contentValues.put(key_quantity, medication.getQuantity());
+        contentValues.put(key_date, medication.getDate());
 
         //inserting row
         db.insert(tablename, null, contentValues);
@@ -63,6 +63,18 @@ public class DBController extends SQLiteOpenHelper {
 
     // get single medication
     public Medication getMedication(int id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(tablename, new String[]{key_id, key_name, key_quantity, key_date}, key_id + "=?",
+                new String[] {String.valueOf(id) }, null, null, null, null); //need more nulls?
+            if (cursor != null)
+                cursor.moveToFirst();
+
+        Medication medication = new Medication(Integer.parseInt(cursor.getString(0)),
+                cursor.getString(1),
+                Integer.parseInt(cursor.getString(2)),
+                Integer.parseInt(cursor.getString(3)));
+
+        return medication;
 
     }
 
