@@ -32,7 +32,7 @@ public class DBController extends SQLiteOpenHelper {
         String query;
         query = "CREATE TABLE IF NOT EXISTS " + tablename +
                 "(" + id + " integer primary key, " + medicine +
-                " text, " + quantity + " text, " + date + " text)";
+                " text, " + quantity + " integer, " + date + " integer)";
         database.execSQL(query);
     }
 
@@ -65,8 +65,6 @@ public class DBController extends SQLiteOpenHelper {
 
         return wordList;
     }
-
-
 
 
 }
