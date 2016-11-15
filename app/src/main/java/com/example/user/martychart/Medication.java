@@ -62,6 +62,11 @@ public class Medication {
         return this.mQuantity;
     }
 
+    //getting quantity as string
+    public String getQuantityString(){
+        return Integer.toString(this.getQuantity());
+    }
+
     //setting quantity
     public void setQuantity(int quantity){
         this.mQuantity = quantity;
