@@ -48,4 +48,9 @@ public class MedicationTest {
         assertEquals(111216, medication.getDate());
     }
 
+    @Test
+    public void testCanGetDateAsString(){
+        assertEquals("111216", medication.getDateString());
+    }
+
 }

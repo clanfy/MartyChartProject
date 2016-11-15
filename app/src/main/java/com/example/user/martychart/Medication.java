@@ -77,6 +77,11 @@ public class Medication {
         return this.mDate;
     }
 
+    //getting date as string
+    public String getDateString(){
+        return Integer.toString(this.getDate());
+    }
+
     //setting date
     public void setDate(int date){
         this.mDate = date;
