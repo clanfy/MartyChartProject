@@ -63,8 +63,13 @@ public class Medication {
     }
 
     //getting date
-    
+    public int getDate(){
+        return this.mDate;
+    }
 
     //setting date
+    public void setDate(int date){
+        this.mDate = date;
+    }
 
 }
