@@ -79,48 +79,64 @@ public class DBController extends SQLiteOpenHelper {
     }
 
     //get all medication
-    public List<Medication> getAllMedication(){
+    public List<Medication> getAllMeds(){
+        List<Medication> medicationList = new ArrayList<Medication>();
 
-    }
+        String query = "SELECT * FROM " + tablename;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
 
-    //get medication count
-    public int getMedicationCount(){
-
-    }
-
-    //update single medication
-    public int updateMedication(Medication medication){
-
-    }
-
-    //delete single medication
-    public void deleteMedication(Medication medication){
-
-    }
-
-
-
-    public ArrayList<HashMap<String, String>> getAllMeds() {
-        ArrayList<HashMap<String, String>> wordList;
-        wordList = new ArrayList<HashMap<String, String>>();
-        String selectQuery = "SELECT  * FROM " + tablename;
-        SQLiteDatabase database = this.getWritableDatabase();
-        Cursor cursor = database.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst()){
             do {
-
-                HashMap<String, String> map = new HashMap<String, String>();
-                map.put("id", cursor.getString(0));
-                map.put("name  ", cursor.getString(1));
-                map.put("quantity", cursor.getString(2));
-                map.put("time", cursor.getString(3));
-
-                wordList.add(map);
+                Medication medication = new Medication();
+                medication.setId(Integer.parseInt(cursor.getString(0)));
+                medication.setName(cursor.getString(1));
+                medication.setQuantity(Integer.parseInt(cursor.getString(2)));
+                medication.setDate(Integer.parseInt(cursor.getString(3)));
+                medicationList.add(medication);
             } while (cursor.moveToNext());
         }
-
-        return wordList;
+        return medicationList;
     }
+
+//    //get medication count
+//    public int getMedicationCount(){
+//
+//    }
+//
+//    //update single medication
+//    public int updateMedication(Medication medication){
+//
+//    }
+//
+//    //delete single medication
+//    public void deleteMedication(Medication medication){
+//
+//    }
+
+
+//replaced by new method above
+//    public ArrayList<HashMap<String, String>> getAllMedsOldMethod() {
+//        ArrayList<HashMap<String, String>> wordList;
+//        wordList = new ArrayList<HashMap<String, String>>();
+//        String selectQuery = "SELECT  * FROM " + tablename;
+//        SQLiteDatabase database = this.getWritableDatabase();
+//        Cursor cursor = database.rawQuery(selectQuery, null);
+//        if (cursor.moveToFirst()) {
+//            do {
+//
+//                HashMap<String, String> map = new HashMap<String, String>();
+//                map.put("id", cursor.getString(0));
+//                map.put("name  ", cursor.getString(1));
+//                map.put("quantity", cursor.getString(2));
+//                map.put("time", cursor.getString(3));
+//
+//                wordList.add(map);
+//            } while (cursor.moveToNext());
+//        }
+//
+//        return wordList;
+//    }
 
 
 }
