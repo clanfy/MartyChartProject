@@ -9,8 +9,8 @@ public class Medication implements Doseable {
     //private variables
     private int mId;
     private String mName;
-    private int mQuantity;
-    private int mDate;
+    private String mQuantity;
+    private String mDate;
 
     //empty constructor
     public Medication(){
@@ -18,7 +18,7 @@ public class Medication implements Doseable {
     }
 
     //constructor
-    public Medication(int id, String name, int quantity, int date){
+    public Medication(int id, String name, String quantity, String date){
         this.mId = id;
         this.mName = name;
         this.mQuantity = quantity;
@@ -26,7 +26,7 @@ public class Medication implements Doseable {
     }
 
     //constructors
-    public Medication(String name, int quantity, int date){
+    public Medication(String name, String quantity, String date){
         this.mName = name;
         this.mQuantity = quantity;
         this.mDate = date;
@@ -58,33 +58,37 @@ public class Medication implements Doseable {
     }
 
     //getting quantity
-    public int getQuantity(){
+    public String getQuantity(){
         return this.mQuantity;
     }
 
     //getting quantity as string
-    public String getQuantityString(){
-        return Integer.toString(this.getQuantity());
-    }
+//    public String getQuantityString(){
+//        return Integer.toString(this.getQuantity());
+//    }
 
     //setting quantity
-    public void setQuantity(int quantity){
+    public void setQuantity(String quantity){
         this.mQuantity = quantity;
     }
 
     //getting date
-    public int getDate(){
+    public String getDate(){
         return this.mDate;
     }
 
     //getting date as string
-    public String getDateString(){
-        return Integer.toString(this.getDate());
-    }
+//    public String getDateString(){
+//        return Integer.toString(this.getDate());
+//    }
 
     //setting date
-    public void setDate(int date){
+    public void setDate(String date){
         this.mDate = date;
+    }
+
+    public String toString(){
+        return this.mName + " " + this.mQuantity + " " + this.mDate;
     }
 
 }

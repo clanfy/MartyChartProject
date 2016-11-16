@@ -8,9 +8,9 @@ public interface Doseable {
     int getId();
     String getIdString();
     String getName();
-    int getQuantity();
-    String getQuantityString();
-    int getDate();
-    String getDateString();
+    String getQuantity();
+//    String getQuantityString();
+    String getDate();
+//    String getDateString();
 
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ public class DBController extends SQLiteOpenHelper {
     private static final String key_quantity = "quantity"; //column name
     private static final String key_date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
-    private static final int versioncode = 10; //version code of the database
+    private static final int versioncode = 13; //version code of the database
 
 
     public DBController(Context context) {
@@ -34,7 +35,7 @@ public class DBController extends SQLiteOpenHelper {
         String query;
         query = "CREATE TABLE IF NOT EXISTS " + tablename +
                 "(" + key_id + " integer primary key, " + key_name +
-                " text, " + key_quantity + " integer, " + key_date + " integer)";
+                " text, " + key_quantity + " text, " + key_date + " text)";
         database.execSQL(query);
     }
 
@@ -71,8 +72,8 @@ public class DBController extends SQLiteOpenHelper {
 
         Medication medication = new Medication(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1),
-                Integer.parseInt(cursor.getString(2)),
-                Integer.parseInt(cursor.getString(3)));
+                cursor.getString(2),
+                cursor.getString(3));
 
         return medication;
 
@@ -80,29 +81,39 @@ public class DBController extends SQLiteOpenHelper {
 
     //GET ALL MEDICATION
 
-    public ArrayList<HashMap<String, String>> getAllMeds() {
-        ArrayList<HashMap<String, String>> wordList;
-        wordList = new ArrayList<HashMap<String, String>>();
-        Medication medication = new Medication();
+    public ArrayList<Medication> getAllMeds() {
+        ArrayList<Medication> medsList = new ArrayList<Medication>();
+
         String selectQuery = "SELECT  * FROM " + tablename;
         SQLiteDatabase database = this.getWritableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
+
         if (cursor.moveToFirst()) {
             do {
+                Medication medication = new Medication();
+                medication.setId(Integer.parseInt(cursor.getString(0)));
+                medication.setName(cursor.getString(1));
+                medication.setQuantity(cursor.getString(2));
+                medication.setDate(cursor.getString(3));
 
-                HashMap<String, String> map = new HashMap<String, String>();
-                map.put(medication.getIdString(), cursor.getString(0));
-                map.put(medication.getName(), cursor.getString(1));
-                map.put(medication.getQuantityString(), cursor.getString(2));
-                map.put(medication.getDateString(), cursor.getString(3));
-
-                wordList.add(map);
+                medsList.add(medication);
             } while (cursor.moveToNext());
         }
 
         // return contact list
-        return wordList;
+        return medsList;
     }
+
+
+
+
+//                HashMap<String, String> map = new HashMap<String, String>();
+//                map.put(medication.getIdString(), cursor.getString(0));
+//                map.put(medication.getName(), cursor.getString(1));
+//                map.put(medication.getQuantityString(), cursor.getString(2));
+//                map.put(medication.getDateString(), cursor.getString(3));
+
+
 
 
 

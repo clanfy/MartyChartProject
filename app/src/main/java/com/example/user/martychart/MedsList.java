@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -29,27 +30,35 @@ public class MedsList extends AppCompatActivity {
 
 
         mListView = (ListView) findViewById(R.id.meds_list);
-        mInfoText = (TextView) findViewById(R.id.txtresulttext);
+//        mInfoText = (TextView) findViewById(R.id.txtresulttext);
 
-        try {
-            List<HashMap<String, String>> data = mController.getAllMeds();//get all meds method
-            Doseable medication = new Medication();
-            if (data.size() != 0) {
-                SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
-                        R.layout.rows,
-                        new String[]{medication.getIdString(), medication.getName(), medication.getQuantityString(), medication.getDateString()},
-                        new int[]{R.id.etmedid, R.id.etname, R.id.etquantity, R.id.etdate});
+        ArrayList<Medication> data = mController.getAllMeds();
 
-                mListView.setAdapter(adapter);
-                String length = String.valueOf(data.size());
-                mInfoText.setText(length + " Medications taken");
-            } else {
-                mInfoText.setText("No medications added");
-            }
+        ArrayAdapter<Medication> adapter = new ArrayAdapter<Medication>(this, android.R.layout.simple_list_item_1, data);
 
-        } catch (Exception exception) {
-            mInfoText.setText(exception.getMessage());
-        }
+        mListView.setAdapter(adapter);
+
+
+
+//        try {
+//            ArrayList<Medication> data = mController.getAllMeds();//get all meds method
+//            Doseable medication = new Medication(); //???
+//            if (data.size() != 0) {
+//                SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
+//                        R.layout.rows,
+//                        new String[]{medication.getIdString(), medication.getName(), medication.getQuantityString(), medication.getDateString()},
+//                        new int[]{R.id.etmedid, R.id.etname, R.id.etquantity, R.id.etdate});
+//
+//                mListView.setAdapter(adapter);
+//                String length = String.valueOf(data.size());
+//                mInfoText.setText(length + " Medications taken");
+//            } else {
+//                mInfoText.setText("No medications added");
+//            }
+//
+//        } catch (Exception exception) {
+//            mInfoText.setText(exception.getMessage());
+//        }
     }
 }
 
