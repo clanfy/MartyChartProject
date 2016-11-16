@@ -33,7 +33,7 @@ public class MedsList extends AppCompatActivity {
 
         try {
             List<HashMap<String, String>> data = mController.getAllMeds();//get all meds method
-            Medication medication = new Medication();
+            Doseable medication = new Medication();
             if (data.size() != 0) {
                 SimpleAdapter adapter = new SimpleAdapter(MedsList.this, data,
                         R.layout.rows,
@@ -48,7 +48,7 @@ public class MedsList extends AppCompatActivity {
             }
 
         } catch (Exception exception) {
-            mInfoText.setText(exception.getMessage().toString());
+            mInfoText.setText(exception.getMessage());
         }
     }
 }
