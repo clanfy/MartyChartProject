@@ -66,7 +66,7 @@
             android:layout_marginRight="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#ffff2f5d"
+            android:background="#ba0830"
             android:textColor="#fff"
             android:textSize="20sp"
             android:text="ADD" />
@@ -78,7 +78,7 @@
             android:layout_marginRight="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#ffff2f5d"
+            android:background="#ba0830"
             android:textColor="#fff"
             android:textSize="20sp"
             android:text="UPDATE" />
@@ -90,7 +90,7 @@
             android:layout_marginRight="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#ffff2f5d"
+            android:background="#ba0830"
             android:textColor="#fff"
             android:textSize="20sp"
             android:text="DELETE" />

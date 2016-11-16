@@ -88,7 +88,7 @@ public class Medication implements Doseable {
     }
 
     public String toString(){
-        return "Medication: " + this.mName + "\n" + "Quantity: " + this.mQuantity + "\n" + "Time taken: " + this.mDate;
+        return "MEDICATION: " + this.mName + "\n" + "QUANTITY: " + this.mQuantity + "\n" + "TIME TAKEN: " + this.mDate;
     }
 
 }

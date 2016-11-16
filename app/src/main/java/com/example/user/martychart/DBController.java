@@ -23,7 +23,7 @@ public class DBController extends SQLiteOpenHelper {
     private static final String key_quantity = "quantity"; //column name
     private static final String key_date = "date"; //column name
     private static final String databasename = "medicationinfo"; //database name
-    private static final int versioncode = 13; //version code of the database
+    private static final int versioncode = 14; //version code of the database
 
 
     public DBController(Context context) {
@@ -100,7 +100,6 @@ public class DBController extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-        // return contact list
         return medsList;
     }
 
@@ -112,15 +111,6 @@ public class DBController extends SQLiteOpenHelper {
 //                map.put(medication.getName(), cursor.getString(1));
 //                map.put(medication.getQuantityString(), cursor.getString(2));
 //                map.put(medication.getDateString(), cursor.getString(3));
-
-
-
-
-
-
-
-
-
 
 //    public ArrayList<Medication> getAllMeds(){
 //        ArrayList<Medication> medicationList = new ArrayList<Medication>();
@@ -165,27 +155,27 @@ public class DBController extends SQLiteOpenHelper {
 
 
 //replaced by new method above
-//    public ArrayList<HashMap<String, String>> getAllMedsOldMethod() {
-//        ArrayList<HashMap<String, String>> wordList;
-//        wordList = new ArrayList<HashMap<String, String>>();
-//        String selectQuery = "SELECT  * FROM " + tablename;
-//        SQLiteDatabase database = this.getWritableDatabase();
-//        Cursor cursor = database.rawQuery(selectQuery, null);
-//        if (cursor.moveToFirst()) {
-//            do {
-//
-//                HashMap<String, String> map = new HashMap<String, String>();
-//                map.put("id", cursor.getString(0));
-//                map.put("name  ", cursor.getString(1));
-//                map.put("quantity", cursor.getString(2));
-//                map.put("time", cursor.getString(3));
-//
-//                wordList.add(map);
-//            } while (cursor.moveToNext());
-//        }
-//
-//        return wordList;
-//    }
+    public ArrayList<HashMap<String, String>> getAllMedsOldMethod() {
+        ArrayList<HashMap<String, String>> wordList;
+        wordList = new ArrayList<HashMap<String, String>>();
+        String selectQuery = "SELECT  * FROM " + tablename;
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+
+                HashMap<String, String> map = new HashMap<String, String>();
+                map.put("id", cursor.getString(0));
+                map.put("name  ", cursor.getString(1));
+                map.put("quantity", cursor.getString(2));
+                map.put("time", cursor.getString(3));
+
+                wordList.add(map);
+            } while (cursor.moveToNext());
+        }
+
+        return wordList;
+    }
 
 
 }

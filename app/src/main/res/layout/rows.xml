@@ -12,46 +12,46 @@
         android:scrollbars="horizontal"
         android:weightSum="6" >
 
-        <TextView
-            android:id="@+id/etmedid"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="#c9b0ff"
-            android:textColor="#000"
-            android:textSize="20sp" />
+        <!--<TextView-->
+            <!--android:id="@+id/etmedid"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center"-->
+            <!--android:background="#c9b0ff"-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20sp" />-->
 
-        <TextView
-            android:id="@+id/etname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:background="#fcffc5"
-            android:textColor="#000"
-            android:textSize="20sp" />
+        <!--<TextView-->
+            <!--android:id="@+id/etname"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="2"-->
+            <!--android:gravity="center"-->
+            <!--android:background="#fcffc5"-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20sp" />-->
 
 
-        <TextView
-            android:id="@+id/etquantity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="#d3f5ff"
-            android:textColor="#000"
-            android:textSize="20sp" />
+        <!--<TextView-->
+            <!--android:id="@+id/etquantity"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center"-->
+            <!--android:background="#d3f5ff"-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20sp" />-->
 
-        <TextView
-            android:id="@+id/etdate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:background="#d3ffdd"
-            android:textColor="#000"
-            android:textSize="20sp" />
+        <!--<TextView-->
+            <!--android:id="@+id/etdate"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="2"-->
+            <!--android:gravity="center"-->
+            <!--android:background="#d3ffdd"-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20sp" />-->
 
 
 
