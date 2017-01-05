@@ -17,13 +17,13 @@ import java.util.List;
 
 public class DBController extends SQLiteOpenHelper {
 
-    private static final String tablename = "medications"; //table name
-    private static final String key_id = "ID"; //auto generated ID column
-    private static final String key_name = "name"; //column name
-    private static final String key_quantity = "quantity"; //column name
-    private static final String key_date = "date"; //column name
-    private static final String databasename = "medicationinfo"; //database name
-    private static final int versioncode = 14; //version code of the database
+    private static final String tablename = "medications";
+    private static final String key_id = "ID";
+    private static final String key_name = "name";
+    private static final String key_quantity = "quantity";
+    private static final String key_date = "date";
+    private static final String databasename = "medicationinfo";
+    private static final int versioncode = 14;
 
 
     public DBController(Context context) {
@@ -105,34 +105,6 @@ public class DBController extends SQLiteOpenHelper {
 
 
 
-
-//                HashMap<String, String> map = new HashMap<String, String>();
-//                map.put(medication.getIdString(), cursor.getString(0));
-//                map.put(medication.getName(), cursor.getString(1));
-//                map.put(medication.getQuantityString(), cursor.getString(2));
-//                map.put(medication.getDateString(), cursor.getString(3));
-
-//    public ArrayList<Medication> getAllMeds(){
-//        ArrayList<Medication> medicationList = new ArrayList<Medication>();
-//
-//        String query = "SELECT * FROM " + tablename;
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery(query, null);
-//
-//        if (cursor.moveToFirst()){
-//            do {
-//                Medication medication = new Medication();
-//                medication.setId(Integer.parseInt(cursor.getString(0)));
-//                medication.setName(cursor.getString(1));
-//                medication.setQuantity(Integer.parseInt(cursor.getString(2)));
-//                medication.setDate(Integer.parseInt(cursor.getString(3)));
-//                medicationList.add(medication);
-//
-//            } while (cursor.moveToNext());
-//        }
-//        return medicationList;
-//    }
-
 //    //get medication count
     public int getMedicationCount(){
         String countQuery = "SELECT * FROM " + tablename;
@@ -143,18 +115,7 @@ public class DBController extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
-//    //update single medication
-//    public int updateMedication(Medication medication){
-//
-//    }
-//
-//    //delete single medication
-//    public void deleteMedication(Medication medication){
-//
-//    }
 
-
-//replaced by new method above
     public ArrayList<HashMap<String, String>> getAllMedsOldMethod() {
         ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
@@ -176,6 +137,4 @@ public class DBController extends SQLiteOpenHelper {
 
         return wordList;
     }
-
-
 }

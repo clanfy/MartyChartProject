@@ -62,10 +62,6 @@ public class Medication implements Doseable {
         return this.mQuantity;
     }
 
-    //getting quantity as string
-//    public String getQuantityString(){
-//        return Integer.toString(this.getQuantity());
-//    }
 
     //setting quantity
     public void setQuantity(String quantity){
@@ -76,11 +72,6 @@ public class Medication implements Doseable {
     public String getDate(){
         return this.mDate;
     }
-
-    //getting date as string
-//    public String getDateString(){
-//        return Integer.toString(this.getDate());
-//    }
 
     //setting date
     public void setDate(String date){
