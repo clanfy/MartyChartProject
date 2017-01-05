@@ -20,17 +20,17 @@ MSCW (Must, Should, Could and Woulds)
 
 ![image](https://cloud.githubusercontent.com/assets/22007490/21688612/719a3aac-d365-11e6-9ec0-27015eaeeca8.png)
 
-And I got my husband Martin (so I then named the app after him) to help me make up a User Case Story of a potential user of this app
-
-<img src="https://cloud.githubusercontent.com/assets/22007490/21688893/7665305e-d366-11e6-93fa-d9795bf3e024.png" width="200">
-
-App icon as a red pill as apparently Dementia patients see red colors best. 
+User Case Story of a potential user of this app
 
 ![image](https://cloud.githubusercontent.com/assets/22007490/21688664/a08aed20-d365-11e6-9584-573ebfdf3f62.png)
 
-![image](https://cloud.githubusercontent.com/assets/22007490/21688697/c29f3222-d365-11e6-9607-2d516b7eb36a.png)
+App icon as a red pill as apparently Dementia patients see red colors best. 
 
-![image](https://cloud.githubusercontent.com/assets/22007490/21688717/d174c10e-d365-11e6-9179-c3762533eadf.png)
+<img src="https://cloud.githubusercontent.com/assets/22007490/21688893/7665305e-d366-11e6-93fa-d9795bf3e024.png" width="250">
+
+<img src="https://cloud.githubusercontent.com/assets/22007490/21688697/c29f3222-d365-11e6-9607-2d516b7eb36a.png" width ="250">
+
+<img src="https://cloud.githubusercontent.com/assets/22007490/21688717/d174c10e-d365-11e6-9179-c3762533eadf.png" width="250">
 
 Learned and experimented with:
 
