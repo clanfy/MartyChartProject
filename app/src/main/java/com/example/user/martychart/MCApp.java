@@ -39,8 +39,7 @@ public class MCApp extends AppCompatActivity {
 
         mAdd = (Button) findViewById(R.id.btnadd);
         mView = (Button) findViewById(R.id.btnview);
-        mUpdate = (Button) findViewById(R.id.btnupdate);
-        mDelete = (Button) findViewById(R.id.btndelete);
+
 
         mResultText = (TextView) findViewById(R.id.txtresulttext);
 
@@ -76,52 +75,53 @@ public class MCApp extends AppCompatActivity {
             }
 
         });
+    }}
 
-        mUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    if ((mName.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals("")) {
-                        mResultText.setText("Please insert values to update");
-                    } else {
-                        mController = new DBController(getApplicationContext());
-                        SQLiteDatabase db = mController.getWritableDatabase();
-                        ContentValues contentValues = new ContentValues();
-                        contentValues.put("name", mName.getText().toString());
-                        contentValues.put("quantity", mQuantity.getText().toString());
-                        contentValues.put("date", mDate.getText().toString());
-
-                        db.update("medications", contentValues, "id=" + mMedId.getText().toString(), null);
-
-                        Toast.makeText(MCApp.this, "Medication input updated successfully", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception exception) {
-                    mResultText.setText(exception.getMessage().toString());
-                }
-            }
-        });
-
-        mDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    if (mMedId.getText().toString().trim().equals("")) {
-                        mResultText.setText("Please insert ID to delete");
-                    } else {
-                        mController = new DBController(getApplicationContext());
-                        SQLiteDatabase db = mController.getWritableDatabase();
-
-                        db.delete("medications", "id=" + mMedId.getText().toString(), null);
-
-                        Toast.makeText(MCApp.this, "Deleted successfully", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception exception) {
-                    mResultText.setText(exception.getMessage().toString());
-                }
-            }
-        });
-    }
-}
+//        mUpdate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    if ((mName.getText().toString().trim().equals("") && mQuantity.getText().toString().trim().equals("")) || mMedId.getText().toString().trim().equals("")) {
+//                        mResultText.setText("Please insert values to update");
+//                    } else {
+//                        mController = new DBController(getApplicationContext());
+//                        SQLiteDatabase db = mController.getWritableDatabase();
+//                        ContentValues contentValues = new ContentValues();
+//                        contentValues.put("name", mName.getText().toString());
+//                        contentValues.put("quantity", mQuantity.getText().toString());
+//                        contentValues.put("date", mDate.getText().toString());
+//
+//                        db.update("medications", contentValues, "id=" + mMedId.getText().toString(), null);
+//
+//                        Toast.makeText(MCApp.this, "Medication input updated successfully", Toast.LENGTH_SHORT).show();
+//                    }
+//                } catch (Exception exception) {
+//                    mResultText.setText(exception.getMessage().toString());
+//                }
+//            }
+//        });
+//
+//        mDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    if (mMedId.getText().toString().trim().equals("")) {
+//                        mResultText.setText("Please insert ID to delete");
+//                    } else {
+//                        mController = new DBController(getApplicationContext());
+//                        SQLiteDatabase db = mController.getWritableDatabase();
+//
+//                        db.delete("medications", "id=" + mMedId.getText().toString(), null);
+//
+//                        Toast.makeText(MCApp.this, "Deleted successfully", Toast.LENGTH_SHORT).show();
+//                    }
+//                } catch (Exception exception) {
+//                    mResultText.setText(exception.getMessage().toString());
+//                }
+//            }
+//        });
+//    }
+//}
 //
 //    //TODO: onCreateOptionsMenu
 ////    @Override
