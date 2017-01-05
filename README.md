@@ -22,7 +22,7 @@ MSCW (Must, Should, Could and Woulds)
 
 And I got my husband Martin (so I then named the app after him) to help me make up a User Case Story of a potential user of this app
 
-![image](https://cloud.githubusercontent.com/assets/22007490/21688893/7665305e-d366-11e6-93fa-d9795bf3e024.png)
+![image](https://cloud.githubusercontent.com/assets/22007490/21688893/7665305e-d366-11e6-93fa-d9795bf3e024.png){:height="36px" width="36px"}
 App icon as a red pill as apparently Dementia patients see red colors best. 
 
 ![image](https://cloud.githubusercontent.com/assets/22007490/21688664/a08aed20-d365-11e6-9584-573ebfdf3f62.png)
