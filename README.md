@@ -18,11 +18,11 @@ I reframed the idea for a medicine tracker - a MAR (Medical Administration Recor
 
 MSCW (Must, Should, Could and Woulds)
 
-<img src="https://cloud.githubusercontent.com/assets/22007490/21688612/719a3aac-d365-11e6-9ec0-27015eaeeca8.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/22007490/21688612/719a3aac-d365-11e6-9ec0-27015eaeeca8.png" width="550">
 
 User Case Story of a potential user of this app
 
-<img src="https://cloud.githubusercontent.com/assets/22007490/21688664/a08aed20-d365-11e6-9584-573ebfdf3f62.png" width="500">
+<img src="https://cloud.githubusercontent.com/assets/22007490/21688664/a08aed20-d365-11e6-9584-573ebfdf3f62.png" width="400">
 
 App icon as a red pill as apparently Dementia patients see red colors best. 
 
